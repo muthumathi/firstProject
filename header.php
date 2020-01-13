@@ -27,7 +27,7 @@
                 <a href="readText.php">Read Text Files</a>
                 <a href="fileOperation.php">File Operations</a>
                 <a href="fileUploads.php">File Uploads</a>
-                <a href="filters.php">Filters</a>
+                <a href="filters.php">Filters and Sanitizing</a>
             </div>
         </div>
 
