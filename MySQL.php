@@ -43,4 +43,23 @@ class MySQL
         $this->conn->close();
         return $res;
     }
+    function Execute($sql)
+		{
+			// echo $sql;
+			
+			$this->connect();
+			try{
+				$res = $this->conn->query($sql);
+				if(!$res)
+					die("Error occurred while executing MySQL Statement. " . $this->conn->error);
+			}
+			catch(Exception $e)
+			{
+				die("Error occurred while executing MySQL Statement. " . $e->getMessage());
+			}
+			finally{
+				$this->conn->close();
+			}
+			return $res;
+		}
 }
