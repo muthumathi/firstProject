@@ -63,13 +63,31 @@
 		
 		function Update()
 		{			
+			if(isset($this->primary_key) && $this->primary_key > 0){
+				$sql = "Update Employee Set employee_id='$this->employee_id', " .
+							"name='$this->name', " .
+							"birthday='$this->birthday', " .
+							"qualification='$this->qualification', " .
+							"department='$this->department', " .
+							"designation='$this->designation', " .
+							"languages_known='$this->languages_known', " .
+							"hobbies='$this->hobbies', " .
+							"sports='$this->sports', " .
+							"games='$this->games' ," .
+							"skills='$this->skills', " .
+							"goal_in_office='$this->goal_in_office' " .
+						"Where primary_key=$this->primary_key";
 
-			$sql = "Insert Into Employee(primary_key,employee_id,name,birthday,qualification,department,designation, " .
+			
+					}
+			else{
+				$sql = "Insert Into Employee(primary_key,employee_id,name,birthday,qualification,department,designation, " .
 						"languages_known, hobbies, sports,games,skills, " .
 						"goal_in_office) Values ('$this->primary_key', '$this->employee_id', '$this->name','$this->birthday'," .
 						"'$this->qualification', '$this->department', '$this->designation','$this->languages_known', " .
 						"'$this->hobbies', '$this->sports','$this->games','$this->skills', '$this->goal_in_office')";
-			
+
+			}
 			$db = new MySQL();
 			$db->Execute($sql);
 			unset($db);
