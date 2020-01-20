@@ -39,7 +39,7 @@
                 <a href="mysqlClass.php">MySQL Class</a>
                 <a href="listingRecords.php">Listing Records</a>
                 <a href="particularRecord.php">Particular Record</a>
-                <a href="paySlip.php">Pay Slip</a>
+                <!-- <a href="paySlip.php">Pay Slip</a> -->
             </div>
         </div>
 

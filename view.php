@@ -52,7 +52,7 @@
       unset($db);
       unset($dt);
     ?>
-      <h1><?= $dr["name"] ?> Particulars :  </h1>
+      <h1><?= $dr["name"] ?> Particulars : </h1>
       <div class="row">
         <div class="col-sm-3">
           Employee ID:
@@ -66,7 +66,7 @@
           BirthDay:
         </div>
         <div class="col-sm-9">
-          <b><?=date('d-M-Y l', strtotime($dr["birthday"])) ?></b>
+          <b><?= date('d-M-Y l', strtotime($dr["birthday"])) ?></b>
         </div>
       </div>
       <div class="row">
@@ -104,51 +104,51 @@
       </div>
 
       <div class="row">
-  <div class="col-sm-3">
-						Hobbies:
-					</div>
-					<div class="col-sm-9">
-						<b><?= $dr["hobbies"] ?></b>
-					</div>
+        <div class="col-sm-3">
+          Hobbies:
         </div>
-        
-        <div class="row">
-  <div class="col-sm-3">
-						Sports:
-					</div>
-					<div class="col-sm-9">
-						<b><?= $dr["sports"] ?></b>
-					</div>
-				</div>
-        <div class="row">
-  <div class="col-sm-3">
-						Games:
-					</div>
-					<div class="col-sm-9">
-						<b><?= $dr["games"] ?></b>
-					</div>
+        <div class="col-sm-9">
+          <b><?= $dr["hobbies"] ?></b>
         </div>
-        <div class="row">
-  <div class="col-sm-3">
-						Skills:
-					</div>
-					<div class="col-sm-9">
-						<b><?= $dr["skills"] ?></b>
-					</div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          Sports:
         </div>
-        <div class="row">
-  <div class="col-sm-3">
-						Goal In Office for <b>2020</b> :
-					</div>
-					<div class="col-sm-9">
-						<b><?= $dr["goal_in_office"] ?></b>
-					</div>
-				</div>
+        <div class="col-sm-9">
+          <b><?= $dr["sports"] ?></b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          Games:
+        </div>
+        <div class="col-sm-9">
+          <b><?= $dr["games"] ?></b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          Skills:
+        </div>
+        <div class="col-sm-9">
+          <b><?= $dr["skills"] ?></b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          Goal In Office for <b>2020</b> :
+        </div>
+        <div class="col-sm-9">
+          <b><?= $dr["goal_in_office"] ?></b>
+        </div>
+      </div>
     <?php
     }
     ?>
   </div>
   <a href="listView.php">
-  <button style="margin: 35px;"  type="button" class="btn btn-primary">Back</button> </a>
+    <button style="margin: 35px;" type="button" class="btn btn-primary">Back</button> </a>
 
 </body>

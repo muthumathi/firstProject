@@ -148,7 +148,7 @@
     }
     ?>
   </div>
-  <a href="create.php">
+  <a href="listingRecords.php">
   <button style="margin: 35px;"  type="button" class="btn btn-primary">Back</button> </a>
 
 </body>
