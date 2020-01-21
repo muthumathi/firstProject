@@ -3,7 +3,7 @@
 
 <head>
   <title>
-    Particular Record.! [Update]
+    Particular Record.! [Delete]
   </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,15 +18,7 @@
 <body>
   <?php
   include_once 'MySQL.php';
-  include_once 'EmployeeBO.php';
   include 'header.php';
-  $bo = new Employee();
-  $primary_key = (int) $_GET["eid"];
-  $Mode = isset($_GET["mode"]) ? $_GET["mode"] : "view";
-  $bo->SetEmployeeId($primary_key);
-
-
-
 
   ?>
 
@@ -44,9 +36,7 @@
       <button type="submit" class="btn btn-default">Search</button>
   </div> -->
 
-
   <div class="container">
-
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
       $primary_key = $_GET["eid"];
@@ -56,22 +46,13 @@
       $dt = $db->GetDataTable($sql);
 
       if ($dt->num_rows == 0) {
-        die("<div class='text-danger' style='margin-top: 50px;'>No. such employee code found : $employee_id</div>");
+        die("<div class='text-danger' style='margin-top: 50px;'>No. such employee code found : $empcode</div>");
       }
       $dr = $dt->fetch_assoc();
       unset($db);
       unset($dt);
-
-
-
-
     ?>
-
-
-
-      <h1 style="margin-bottom: 20px;"><?= $Mode == 'view' ? "View Employee Details" : "Delete Employee" ?></h1>
-      <h1><?= $dr["name"] ?> Particulars : </h1>
-
+      <h1><?= $dr["name"] ?> Particulars :  </h1>
       <div class="row">
         <div class="col-sm-3">
           Employee ID:
@@ -85,7 +66,7 @@
           BirthDay:
         </div>
         <div class="col-sm-9">
-          <b><?= date('d-M-Y l', strtotime($dr["birthday"])) ?></b>
+          <b><?=date('d-M-Y l', strtotime($dr["birthday"])) ?></b>
         </div>
       </div>
       <div class="row">
@@ -123,62 +104,51 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-3">
-          Hobbies:
+  <div class="col-sm-3">
+						Hobbies:
+					</div>
+					<div class="col-sm-9">
+						<b><?= $dr["hobbies"] ?></b>
+					</div>
         </div>
-        <div class="col-sm-9">
-          <b><?= $dr["hobbies"] ?></b>
+        
+        <div class="row">
+  <div class="col-sm-3">
+						Sports:
+					</div>
+					<div class="col-sm-9">
+						<b><?= $dr["sports"] ?></b>
+					</div>
+				</div>
+        <div class="row">
+  <div class="col-sm-3">
+						Games:
+					</div>
+					<div class="col-sm-9">
+						<b><?= $dr["games"] ?></b>
+					</div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          Sports:
+        <div class="row">
+  <div class="col-sm-3">
+						Skills:
+					</div>
+					<div class="col-sm-9">
+						<b><?= $dr["skills"] ?></b>
+					</div>
         </div>
-        <div class="col-sm-9">
-          <b><?= $dr["sports"] ?></b>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          Games:
-        </div>
-        <div class="col-sm-9">
-          <b><?= $dr["games"] ?></b>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          Skills:
-        </div>
-        <div class="col-sm-9">
-          <b><?= $dr["skills"] ?></b>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          Goal In Office for <b>2020</b> :
-        </div>
-        <div class="col-sm-9">
-
-          <b><?= $dr["goal_in_office"] ?></b>
-        </div>
-      </div>
+        <div class="row">
+  <div class="col-sm-3">
+						Goal In Office for <b>2020</b> :
+					</div>
+					<div class="col-sm-9">
+						<b><?= $dr["goal_in_office"] ?></b>
+					</div>
+				</div>
     <?php
     }
     ?>
   </div>
-  <div class="container" style="margin-top: 25px;">
-    <h3>
-      <?php if ($Mode == 'delete') { ?>
-        <a href="delete_D.php?eid=<?= $primary_key ?>" class="text-danger">Confirm Delete?</a>&nbsp;<a href="delete.php">Back to Delete Listing Page</a>
-      <?php } ?>
-      
-    </h3>
-  </div>
-
-
-  <a href="edit.php">
-    <button style="margin: 35px;" type="button" class="btn btn-primary">Back to Edit Listing Page</button> </a>
+  <a href="delete.php">
+  <button style="margin: 35px;"  type="button" class="btn btn-primary">Back</button> </a>
 
 </body>

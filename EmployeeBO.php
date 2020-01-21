@@ -92,6 +92,14 @@
 			$db->Execute($sql);
 			unset($db);
 		}
+		function Delete($primary_key)
+		{
+			$db = new MySQL();
+			$sql = "Delete From Employee Where primary_key=$primary_key";
+			$dt = $db->Execute($sql);
+			unset($db);
+			return $dt;
+		}
 	}
 ?>
 

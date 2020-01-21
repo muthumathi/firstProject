@@ -34,7 +34,7 @@
       <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Add New</button>
     </form>
 
- 
+
 
 
 
@@ -60,12 +60,12 @@
         foreach ($dt as $dr) { ?>
 
           <tr>
-          <td> 
-          <form class="form-inline" action="edit0_U.php" method="POST">
-    <a href="edit0_U.php?eid=<?= $dr["primary_key"] ?>">Edit</a>
-    </form>
+            <td>
 
-          </td>
+              <a href="edit0_U.php?eid=<?= $dr["primary_key"] ?>">Edit</a>
+
+
+            </td>
             <td>
               <div id='primary_key' style="display:none;"><?= $dr["primary_key"] ?></div> <?= $dr["employee_id"] ?>
             </td>
@@ -85,11 +85,11 @@
     </table>
   </div>
   <script>
-    		$(document).ready(function(){
-				$("#listview table").delegate('tr', 'click', function() {
-					var eid = $("#primary_key", this).html();
-					window.location.href = "views_U.php?eid=" + eid;			
-				});
-			});
-		</script>
-    </body>
+    $(document).ready(function() {
+      $("#listview table").delegate('tr', 'click', function() {
+        var eid = $("#primary_key", this).html();
+        window.location.href = "views_U.php?eid=" + eid;
+      });
+    });
+  </script>
+</body>
