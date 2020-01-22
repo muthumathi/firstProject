@@ -55,7 +55,7 @@
 		function GetRecordById($primary_key)
 		{
 			$db = new MySQL();
-			$sql = "Select * From Employee Where EmployeeId=$primary_key";
+			$sql = "Select * From Employee Where primary_key=$primary_key";
 			$dt = $db->GetDataTable($sql);
 			unset($db);
 			return $dt;

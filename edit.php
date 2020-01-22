@@ -18,6 +18,7 @@
 <body>
   <?php
   include 'header.php';
+  include_once 'MySQL.php';
   include_once 'EmployeeBO.php';
   $bo = new Employee();
   $dt = $bo->GetList();

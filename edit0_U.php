@@ -25,6 +25,7 @@
 
 	$bo = new Employee();
 	$primary_key = (int) $_GET["eid"];
+	//$bo->SetEmployeeId($primary_key);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (isset($_POST["btncancel"])) {
 			header('Location: edit.php');
